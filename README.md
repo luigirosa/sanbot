@@ -1,7 +1,6 @@
 # sanbot
 
 Bot da orbi!
-Un bot per santificare i canali Telegram.
 
 ## SANBOT.INI
 Tutte le informazioni private sono registrate nel file `sanbot.ini` che ha questo formato:
@@ -15,4 +14,6 @@ ChatID=<id della chat>
 JSONurl=https://www.santodelgiorno.it/santi.json
 ```
 
-ChatID si ricava dalla risposta JSON di Telegram e serve al programma per rispondere direttamente ad una richiesta.
+Per fare in modo che questo file non venga prelevato via http aggiungere questa riga nella configurazione del virtual host Apache:
+
+`RedirectMatch 404 ^/setup.ini`
