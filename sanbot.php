@@ -37,20 +37,17 @@ if (isset($argv[1]) and 'annuncio' == $argv[1]) {
 
 // mi hanno invocato
 $aUpdate = json_decode(file_get_contents("php://input"), TRUE);
-// per debug, ma lo lascio
-file_put_contents('update', print_r($aUpdate, true)) ;
-
+file_put_contents('update', print_r($aUpdate, true));   // per debug, ma lo lascio, che non si sa mai
 // invoco un solo santo
 if ('/mannaggia' == $aUpdate['message']['text']) {
         shuffle($aSantoSingolo);
         $santibuffer = "Mannaggia a " . $aSantoSingolo[0];
-        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
-
 // invoco tutti i santi
 if ('/mannaggiatutti' == $aUpdate['message']['text']) {
         $santibuffer = "Mannaggia a:\n" . $TuttiSanti;
-        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));
 }
+//...e pubblico
+file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 
 ### END OF FILE ###
