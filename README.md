@@ -3,7 +3,7 @@
 Bot da orbi!
 
 ## SANBOT.INI
-Tutte le informazioni private sono registrate nel file `sanbot.ini` che ha questo formato
+Tutte le informazioni private sono registrate nel file `sanbot.ini` che ha questo formato:
 
 ```
 [Telegram]
