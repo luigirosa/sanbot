@@ -7,10 +7,10 @@
  *
  */
 
-// leggiamo tutti i dati di configurazione da un file INI
+// leggo i dati di configurazione da un file INI
 $aSetup = parse_ini_file('sanbot.ini', true);
 
-// leggo il json del santo del giorno e li ficco in un array
+// leggo il json del santo del giorno e lo ficco in un array
 // uso curl al posto di file_get_content() per maggior configurabilita'
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // cosi' va anche se gli scade il cert
@@ -21,6 +21,7 @@ curl_close($ch);
 $aSanti = json_decode($CurlResult, true);
 // metto subito tutti i santi in una bella stringa 
 $TuttiSanti = '';
+// e in un array per la selezione casuale
 $aSantoSingolo = array();
 foreach($aSanti as $aSanto) {
         $TuttiSanti .= "$aSanto[nome] " . lcfirst($aSanto[tipologia]) . "\n";
