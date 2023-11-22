@@ -3,7 +3,7 @@
  *
  * Santo bot
  *
- * Santo bot is free software
+ * Santo bot is free software: se funziona, funziona, altrimenti PECCATO!
  *
  */
 
@@ -23,8 +23,8 @@ $aSanti = json_decode($CurlResult, true);
 $TuttiSanti = '';
 $aSantoSingolo = array();
 foreach($aSanti as $aSanto) {
-        $TuttiSanti .= "$aSanto[nome] $aSanto[tipologia]\n";
-        $aSantoSingolo[] = "$aSanto[nome] $aSanto[tipologia]";
+        $TuttiSanti .= "$aSanto[nome] " . lcfirst($aSanto[tipologia]) . "\n";
+        $aSantoSingolo[] = "$aSanto[nome] " . lcfirst($aSanto[tipologia]);
 }
 
 // se mi hanno chiamato per annunciare i santi, procedo e poi esco
