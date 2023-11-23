@@ -24,8 +24,8 @@ $TuttiSanti = '';
 // e in un array per la selezione casuale
 $aSantoSingolo = array();
 foreach($aSanti as $aSanto) {
-        $TuttiSanti .= "$aSanto[nome] " . lcfirst($aSanto[tipologia]) . "\n";
-        $aSantoSingolo[] = "$aSanto[nome] " . lcfirst($aSanto[tipologia]);
+        $TuttiSanti .= "$aSanto[nome] " . lcfirst($aSanto['tipologia']) . "\n";
+        $aSantoSingolo[] = "$aSanto[nome] " . lcfirst($aSanto['tipologia']);
 }
 
 // se mi hanno chiamato per annunciare i santi, procedo e poi esco
