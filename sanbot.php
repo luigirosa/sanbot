@@ -39,7 +39,7 @@ if (isset($argv[1]) and 'annuncio' == $argv[1]) {
 $aUpdate = json_decode(file_get_contents("php://input"), TRUE);
 file_put_contents('update', print_r($aUpdate, true));   // per debug, ma lo lascio, che non si sa mai
 // invoco un solo santo
-if ('/mannaggia' == $aUpdate['message']['text']) {
+if ('/mannaggia@tuttiisantidelparadisobot' == $aUpdate['message']['text']) {
         shuffle($aSantoSingolo);
         $santibuffer = "Mannaggia a " . $aSantoSingolo[0];
         //...e pubblico
