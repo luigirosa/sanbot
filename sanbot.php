@@ -42,12 +42,14 @@ file_put_contents('update', print_r($aUpdate, true));   // per debug, ma lo lasc
 if ('/mannaggia' == $aUpdate['message']['text']) {
         shuffle($aSantoSingolo);
         $santibuffer = "Mannaggia a " . $aSantoSingolo[0];
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 // invoco tutti i santi
 if ('/mannaggiatutti' == $aUpdate['message']['text']) {
         $santibuffer = "Mannaggia a:\n" . $TuttiSanti;
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
-//...e pubblico
-file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 
 ### END OF FILE ###
