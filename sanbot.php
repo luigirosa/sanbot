@@ -38,22 +38,23 @@ if (isset($argv[1]) and 'annuncio' == $argv[1]) {
 // mi hanno invocato
 $aUpdate = json_decode(file_get_contents("php://input"), TRUE);
 file_put_contents('update', print_r($aUpdate, true));   // per debug, ma lo lascio, che non si sa mai
+$comando = str_ireplace('@' . $aSetup['Telegram']['BotUser'], '', $aUpdate['message']['text']);
 // invoco un solo santo
-if ('/mannaggia' == $aUpdate['message']['text']) {
+if ('/mannaggia' == $comando) {
         shuffle($aSantoSingolo);
         $santibuffer = "Mannaggia a " . $aSantoSingolo[0];
         //...e pubblico
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 // invoco tutti i santi
-if ('/mannaggiatutti' == $aUpdate['message']['text']) {
+if ('/mannaggiatutti' == $comando) {
         $santibuffer = "Mannaggia a:\n" . $TuttiSanti;
         //...e pubblico
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 
 // la password del Dottore
-if ('/dottore' == $aUpdate['message']['text']) {
+if ('/dottore' == $comando) {
         $santibuffer = "Westerly Pelican Dreams Tornado Clifftops Andante Grief Fingerprint Susurration Sparrow Dance Mexico Binary Binary Binary";
         //...e pubblico
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
