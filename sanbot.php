@@ -52,4 +52,11 @@ if ('/mannaggiatutti' == $aUpdate['message']['text']) {
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 
+// la password del Dottore
+if ('/dottore' == $aUpdate['message']['text']) {
+        $santibuffer = "Westerly Pelican Dreams Tornado Clifftops Andante Grief Fingerprint Susurration Sparrow Dance Mexico Binary Binary Binary";
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
+}
+
 ### END OF FILE ###
