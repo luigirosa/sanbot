@@ -60,4 +60,20 @@ if ('/dottore' == $comando) {
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 
+// generatore di password
+if ('/password' == $comando) {
+        $aDictionary = file('dictionary.txt');
+        $aOut = Array();
+        for ($i = 1; $i < mt_rand(5, 8); $i++ ) $aOut[] = SanGetWord() . mt_rand(10, 99);
+        $santibuffer =  implode('-', $aOut);
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
+}
+
+function SanGetWord() {
+	global $aDictionary;
+	shuffle($aDictionary);
+	return ucfirst(trim($aDictionary[0]));
+}
+
 ### END OF FILE ###
