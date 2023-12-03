@@ -9,10 +9,13 @@ binary
 bizarre
 black
 blasphemy
+blinss
+brate
 cahos
 cathedral
 clifftops
 clorine
+coliss
 computer
 corrosion
 cosmic
@@ -35,11 +38,13 @@ eerie
 ether
 evil
 face
+fenslaw
 fingerprint
 funereal
 german
 ghost
 ghoul
+gilvane
 goblin
 goth
 gothic
@@ -64,6 +69,7 @@ lovecraft
 macabre
 manor
 marble
+mavity
 maze
 medieval
 melanchony
@@ -88,6 +94,7 @@ polonium
 punk
 pure
 radon
+ratico
 redshift
 religion
 reptilian
@@ -99,6 +106,7 @@ sanskrit
 satan
 scary
 seminar
+sensill
 sepulchral
 server
 shroud
@@ -106,11 +114,13 @@ sinister
 sparrow
 spider
 spooky
+stond
 strange
 stygian
 supernatural
 surreal
 susurration
+tacsladia
 thorium
 tornado
 tower
@@ -119,7 +129,9 @@ twilight
 ultraviolect
 uranium
 vampire
+vandeen
 velvet
+venom
 victorian
 vulgar
 westerly
