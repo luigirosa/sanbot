@@ -5,12 +5,14 @@ alarming
 ambiguous
 amoral
 andante
+annihilation
 antichrist
 apocalypse
 arab
 archetypal
 argon
 atrocious
+atrocity
 baleful
 baroque
 beast
@@ -60,6 +62,7 @@ deception
 decrepit
 defang
 deity
+delirium
 demon
 demonic
 depicted
@@ -81,6 +84,7 @@ dreams
 druidic
 eerie
 element
+enochian
 ether
 evil
 face
@@ -89,14 +93,17 @@ ferocious
 fingerprint
 forbidding
 foul
+fractal
 funereal
 gangster
+geiger
 german
 ghost
 ghoul
 gilvane
 goblin
 goofy
+gorgon
 goth
 gothic
 graveyard
@@ -110,6 +117,7 @@ haunted
 hell
 hellish
 hideous
+hilbert
 horror
 hydrogen
 imaginary
@@ -126,6 +134,7 @@ intentions
 iron
 labyrinth
 latin
+laundry
 leave
 leftist
 leftward
@@ -133,6 +142,7 @@ leviathan
 linux
 lolita
 lovecraft
+lovercraft
 lucifer
 luciferian
 macabre
@@ -149,6 +159,7 @@ maze
 medieval
 melanchony
 menace
+meridian
 metal
 mexico 
 minacious
@@ -156,11 +167,14 @@ mischief
 mischievous
 mistaken
 mistery
+moebius
 monstrous
+morgue
 murderer
 murderous
 mysterious
 mystery
+nadir
 naive
 nebulous
 nefarious
@@ -197,6 +211,7 @@ reptilian
 repulsive
 resemblance
 resembling
+rhesus
 rise
 rock
 rogue
@@ -242,6 +257,7 @@ treachery
 tudor
 twilight
 twist
+tzompantli
 ugly
 ulterior
 ultraviolect
@@ -266,5 +282,6 @@ westerly
 wicked
 witch
 xenon
+zenith
 zombie
 zulu
