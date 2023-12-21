@@ -13,6 +13,7 @@ archetypal
 argon
 atrocious
 atrocity
+babylon
 baleful
 baroque
 beast
@@ -27,6 +28,7 @@ blackly
 blackness
 blasphemy
 blinss
+borg
 brate
 bravado
 cahos
@@ -48,6 +50,7 @@ cruel
 cryptic
 cursed
 cynical
+dalek
 dance
 dark
 darken
@@ -95,6 +98,8 @@ forbidding
 foul
 fractal
 funereal
+fury
+gallifrey
 gangster
 geiger
 german
@@ -104,6 +109,7 @@ gilvane
 goblin
 goofy
 gorgon
+gorn
 goth
 gothic
 graveyard
@@ -132,6 +138,8 @@ insolent
 intent
 intentions
 iron
+klingon
+kosh
 labyrinth
 latin
 laundry
@@ -141,6 +149,7 @@ leftward
 leviathan
 linux
 lolita
+lord
 lovecraft
 lovercraft
 lucifer
@@ -215,6 +224,7 @@ rhesus
 rise
 rock
 rogue
+romulus
 router
 ruinous
 sanskrit
@@ -248,6 +258,7 @@ supernatural
 surreal
 susurration
 tacsladia
+tardis
 tenebrous
 thief
 thorium
@@ -277,11 +288,15 @@ vile
 villain
 villainous
 vindictive
+vogon
+vorlon
+vulcan
 vulgar
 westerly
 wicked
 witch
 xenon
 zenith
+zigon
 zombie
 zulu
