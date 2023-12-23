@@ -97,7 +97,7 @@ if ('/password' == $comando) {
 // generatore di password sante
 if ('/santapassword' == $comando) {
         $aOut = Array();
-        for ($i = 1; $i < mt_rand(3, 5); $i++ ) $aOut[] = PassGetWord($aSanPass) . mt_rand(10, 99);
+        for ($i = 1; $i < mt_rand(4, 5); $i++ ) $aOut[] = PassGetWord($aSanPass) . mt_rand(10, 99);
         $santibuffer =  implode('-', $aOut);
         //...e pubblico
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
