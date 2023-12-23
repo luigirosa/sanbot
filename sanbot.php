@@ -27,10 +27,28 @@ foreach($aSanti as $aSanto) {
         $TuttiSanti .= "$aSanto[nome] " . lcfirst($aSanto['tipologia']) . "\n";
         $aSantoSingolo[] = "$aSanto[nome] " . lcfirst($aSanto['tipologia']);
 }
+// array per la Santa Password
+$aSanPass = array();
+$tok = strtok($TuttiSanti, " ()\r\n',.");
+while ($tok !== false) {
+        $b = $tok;
+        if (ctype_upper($b[0])) {
+                if (strlen($b) > 3) {
+                        if ('San' != substr($b, 0, 3)) {
+                                $aSanPass[] = $b;
+                                
+                        }
+                }
+        }
+    $tok = strtok(" ()\r\n',.");
+}
+$aSanPass = array_unique($aSanPass, SORT_STRING);
+$aSanPassOut = array();
+for ($i = 1; $i < mt_rand(3, 5); $i++ ) $aSanPassOut[] = PassGetWord($aSanPass) . mt_rand(10, 99);
 
 // se mi hanno chiamato per annunciare i santi, procedo e poi esco
 if (isset($argv[1]) and 'annuncio' == $argv[1]) {
-        $santibuffer = "I santi da invocare oggi:\n" . $TuttiSanti . "E puoi sempre richiamarli con /mannaggiatutti oppure solamente uno a caso con /mannaggia";
+        $santibuffer = "I santi da invocare oggi:\n" . $TuttiSanti . "\nLa Santa Password del giorno: " . implode('-', $aSanPassOut) ."\nPer i comandi disponibili /help";
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aSetup['Telegram']['ChatID'] ."&text=" . urlencode($santibuffer));        
         exit();
 }
@@ -39,6 +57,12 @@ if (isset($argv[1]) and 'annuncio' == $argv[1]) {
 $aUpdate = json_decode(file_get_contents("php://input"), TRUE);
 file_put_contents('update', print_r($aUpdate, true));   // per debug, ma lo lascio, che non si sa mai
 $comando = str_ireplace('@' . $aSetup['Telegram']['BotUser'], '', $aUpdate['message']['text']);
+// aiuto
+if ('/help' == $comando) {
+        $santibuffer = "/mannaggia mannaggia ad un santo del giorno\n/mannaggiatutti mannaggia a tutti i santi del giorno\n/password generatore di password\n/santapassword la santa password del giorno\n/dottore la password del Dottore";
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
+}
 // invoco un solo santo
 if ('/mannaggia' == $comando) {
         shuffle($aSantoSingolo);
@@ -64,16 +88,24 @@ if ('/dottore' == $comando) {
 if ('/password' == $comando) {
         $aDictionary = file('dictionary.txt');
         $aOut = Array();
-        for ($i = 1; $i < mt_rand(5, 8); $i++ ) $aOut[] = SanGetWord() . mt_rand(10, 99);
+        for ($i = 1; $i < mt_rand(5, 8); $i++ ) $aOut[] = PassGetWord($aDictionary) . mt_rand(10, 99);
         $santibuffer =  implode('-', $aOut);
         //...e pubblico
         file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
 }
 
-function SanGetWord() {
-	global $aDictionary;
-	shuffle($aDictionary);
-	return ucfirst(trim($aDictionary[0]));
+// generatore di password sante
+if ('/santapassword' == $comando) {
+        $aOut = Array();
+        for ($i = 1; $i < mt_rand(3, 5); $i++ ) $aOut[] = PassGetWord($aSanPass) . mt_rand(10, 99);
+        $santibuffer =  implode('-', $aOut);
+        //...e pubblico
+        file_get_contents($aSetup['Telegram']['APIurl'] . "/sendmessage?chat_id=" . $aUpdate['message']['chat']['id'] ."&text=" . urlencode($santibuffer));        
+}
+
+function PassGetWord($dict) {
+	shuffle($dict);
+	return ucfirst(trim($dict[0]));
 }
 
 ### END OF FILE ###
