@@ -35,7 +35,9 @@ while ($tok !== false) {
         if (ctype_upper($b[0])) {
                 if (strlen($b) > 3) {
                         if ('San' != substr($b, 0, 3)) {
-                                $aSanPass[] = $b;
+                        	if ('Beat' != substr($b, 0, 4)) {
+                                	$aSanPass[] = $b;
+				}
                                 
                         }
                 }
