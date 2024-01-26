@@ -193,8 +193,7 @@ arena
 argon
 aristotelian
 aristotle
-arkab posterior
-arkab prior
+arkab
 arknights
 arneb
 arrakis
@@ -251,7 +250,6 @@ banshee
 barbituric
 barium
 baroque
-baten kaitos
 beast
 bebeerine
 beelzebub
@@ -1059,7 +1057,6 @@ kubera
 kurhah
 kurma
 kushmanda
-la superba
 lab
 laboratory
 labyrinth
