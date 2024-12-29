@@ -17,3 +17,4 @@ JSONurl=https://www.santodelgiorno.it/santi.json
 Per fare in modo che questo file non venga prelevato via http aggiungere questa riga nella configurazione del virtual host Apache:
 
 `RedirectMatch 404 ^/setup.ini`
+BAU
